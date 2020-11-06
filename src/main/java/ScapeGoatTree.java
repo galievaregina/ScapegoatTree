@@ -52,7 +52,6 @@ public class ScapeGoatTree<T extends Comparable<T>> {
      * Далее находим узел,в котором потерян баланс и перестраеваем его поддерево.
      */
     //T = O(logN)
-
     public boolean add(T data) {
         Node<T> closest = find(data);
         int comparison = closest == null ? -1 : data.compareTo(closest.data);
@@ -141,7 +140,8 @@ public class ScapeGoatTree<T extends Comparable<T>> {
         Node<T> closest = find(data);
         return closest != null && data.compareTo(closest.data) == 0;
     }
-// T=O(logN)
+
+    // T=O(logN)
     public boolean remove(T data) {
         maxSize--;
         boolean contains = contains(data);
